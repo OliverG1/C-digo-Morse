@@ -1,0 +1,252 @@
+using System;
+using System.IO;
+
+namespace Codigo_Morse
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           Int32 dot = 260;
+           Int32 Frecuency = 600;
+           Int32 line = 780;
+           String Word;
+
+           Console.Write("Introduzca el texto: ");
+           Word = Console.ReadLine().ToLower();
+
+           char[] b = new char[Word.Length];
+
+           using (StringReader str = new StringReader(Word))
+           {
+               str.Read(b, 0, Word.Length);
+           }
+
+           for (Int32 j = 0; j < Word.Length; j++)
+           {
+               switch (b[j])
+               {
+                   case 'a':
+                        Console.Write("· —");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                   case 'b':
+                        Console.Write("— · · ·");
+                        Console.Beep(Frecuency, line);
+                        for(Int32 i = 0; i < 3; i++)
+                        {
+                            System.Threading.Thread.Sleep(dot);
+                            Console.Beep(Frecuency, dot);
+                        }
+                        break;
+                   case 'c':
+                        Console.Write("— · — ·");
+                        Console.Beep(Frecuency, line);           
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'd':
+                        Console.Write("— · ·");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'e':
+                        Console.Write("·");
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'f':
+                        Console.Write("· · — ·");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);            
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'g':
+                        Console.Write("— — ·");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'h':
+                        Console.Write("· · · ·");
+                        Console.Beep(Frecuency, dot);
+                        for (Int32 i = 0; i < 3; i++)
+                        {
+                            System.Threading.Thread.Sleep(dot);
+                            Console.Beep(Frecuency, dot);
+                        }
+                        break;
+                    case 'i':
+                        Console.Write("· ·");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'j':
+                        Console.Write("· — — —");
+                        Console.Beep(Frecuency, dot);
+                        for (Int32 i = 0; i < 3; i++)
+                        {
+                            System.Threading.Thread.Sleep(dot);
+                            Console.Beep(Frecuency, line);
+                        } 
+                        break;
+                    case 'k':
+                        Console.Write("— · —");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'l':
+                        Console.Write("· — · ·");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'm':
+                        Console.Write("— —");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'n':
+                        Console.Write("— ·");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'o':
+                        Console.Write("— — —");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'p':
+                        Console.Write("· — — ·");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 'q':
+                        Console.Write("— — · —");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'r':
+                        Console.Write("· — ·");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 's':
+                        Console.Write("· · ·");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case 't':
+                        Console.Write("—");
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'u':
+                        Console.Write("· · —");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);  
+                        break;
+                    case 'v':
+                        Console.Write("· · · —");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'w':
+                        Console.Write("· — —");
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);  
+                        break;
+                    case 'x':
+                        Console.Write("— · · —");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'y':
+                        Console.Write("— · — —");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        break;
+                    case 'z':
+                        Console.Write("— — · ·");
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, line);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        System.Threading.Thread.Sleep(dot);
+                        Console.Beep(Frecuency, dot);
+                        break;
+                    case ' ':
+                        Console.Write(" ");
+                        System.Threading.Thread.Sleep(dot * 7);
+                        break;
+               }
+               Console.Write("|");
+           }
+           Console.ReadKey();
+        }
+    }
+}
